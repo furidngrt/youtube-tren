@@ -9,6 +9,12 @@ const Navbar = () => {
         <Link to="/" className="navbar-logo">
           YouTube Trending
         </Link>
+<<<<<<< HEAD
+=======
+        <div className="navbar-menu">
+          {/* Hapus tautan About, Contact, dan Privacy */}
+        </div>
+>>>>>>> origin/master
       </div>
     </nav>
   );
