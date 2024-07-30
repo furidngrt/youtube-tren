@@ -11,8 +11,8 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center justify-center mt-4">
-      <div className="relative w-full max-w-md">
+    <form onSubmit={handleSubmit} className="flex items-center justify-center mt-4 px-2">
+      <div className="relative w-full max-w-xs sm:max-w-md">
         <input
           type="text"
           value={query}
