@@ -1,77 +1,80 @@
-/* src/styles/TrendingVideos.css */
-
 .video-list {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 800px;
 }
 
 .video-item {
-  padding: 10px;
-  margin: 10px 0;
-  border-bottom: 1px solid #ccc;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
 }
 
 .video-link {
   text-decoration: none;
   color: inherit;
-  display: block;
 }
 
 .video-title {
-  font-size: 1.2rem;
+  font-size: 1.2em;
   margin: 0;
-  color: #333;
-  padding-bottom: 10px;
 }
 
 .video-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .video-thumbnail {
-  width: 120px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-right: 15px;
+  width: 100%;
+  height: auto;
+  max-width: 360px;
+  margin-bottom: 8px;
 }
 
 .video-stats {
-  display: flex;
-  flex-direction: column;
-}
-
-.video-stats p {
-  margin: 2px 0;
-  color: #666;
+  text-align: center;
 }
 
 .pagination {
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 0;
+  list-style: none;
 }
 
 .page-item {
-  margin: 0 5px;
+  margin: 0 4px;
 }
 
 .page-link {
-  padding: 10px 15px;
+  display: block;
+  padding: 8px 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  color: #333;
-  cursor: pointer;
+  text-decoration: none;
+  color: #007bff;
 }
 
 .page-item.active .page-link {
   background-color: #007bff;
-  color: white;
+  color: #fff;
   border-color: #007bff;
+}
+
+@media (max-width: 600px) {
+  .video-title {
+    font-size: 1em;
+  }
+
+  .video-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-thumbnail {
+    max-width: 100%;
+  }
+
+  .page-link {
+    padding: 6px 10px;
+  }
 }
