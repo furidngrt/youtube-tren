@@ -9,17 +9,6 @@ const Navbar = () => {
         <Link to="/" className="navbar-logo">
           YouTube Trending
         </Link>
-        <div className="navbar-menu">
-          <Link to="/about" className="navbar-item">
-            About
-          </Link>
-          <Link to="/contact" className="navbar-item">
-            Contact
-          </Link>
-          <Link to="/privacy" className="navbar-item">
-            Privacy
-          </Link>
-        </div>
       </div>
     </nav>
   );

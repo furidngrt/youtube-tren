@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/App.css';
 import TrendingVideos from './TrendingVideos';
 import VideoDetail from './VideoDetail';
-import About from './components/navbar/About';
-import Contact from './components/navbar/Contact';
-import Privacy from './components/navbar/Privacy';
+import SearchResults from './components/SearchResults'; // Tambahkan ini
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/navbar/Footer';
 
@@ -18,9 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<TrendingVideos />} />
             <Route path="/video/:id" element={<VideoDetail />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/search/:query" element={<SearchResults />} /> {/* Tambahkan ini */}
           </Routes>
         </main>
         <Footer />

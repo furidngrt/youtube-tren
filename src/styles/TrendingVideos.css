@@ -4,7 +4,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 800px; /* Menentukan lebar maksimum untuk daftar */
+  max-width: 800px;
 }
 
 .video-item {
@@ -50,4 +50,28 @@
 .video-stats p {
   margin: 2px 0;
   color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
 }

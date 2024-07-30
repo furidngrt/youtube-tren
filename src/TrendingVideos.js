@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './styles/TrendingVideos.css';
+import SearchBar from './components/navbar/SearchBar'; // Import SearchBar
 
 const TrendingVideos = () => {
   const [videos, setVideos] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [videosPerPage] = useState(5); // Number of videos per page
   const API_KEY = 'AIzaSyCSLtSfo8dh4SU2WrlfLT0jiVQp8wkuB7s';
 
   useEffect(() => {
@@ -15,11 +18,10 @@ const TrendingVideos = () => {
             part: 'snippet,contentDetails,statistics',
             chart: 'mostPopular',
             regionCode: 'ID',
-            maxResults: 10,
+            maxResults: 50,
             key: API_KEY,
           },
         });
-        console.log(response.data.items); // Tambahkan ini untuk debug
         setVideos(response.data.items);
       } catch (error) {
         console.error('Error fetching trending videos', error);
@@ -29,17 +31,21 @@ const TrendingVideos = () => {
     fetchTrendingVideos();
   }, []);
 
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+  // Get current videos
+  const indexOfLastVideo = currentPage * videosPerPage;
+  const indexOfFirstVideo = indexOfLastVideo - videosPerPage;
+  const currentVideos = videos.slice(indexOfFirstVideo, indexOfLastVideo);
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div>
-      <h1>Trending Videos</h1>
+      <SearchBar /> {/* Pindahkan SearchBar ke sini */}
+
       <ul className="video-list">
-        {videos.length > 0 ? (
-          videos.map((video) => (
+        {currentVideos.length > 0 ? (
+          currentVideos.map((video) => (
             <li key={video.id} className="video-item">
               <Link to={`/video/${video.id}`} className="video-link">
                 <h2 className="video-title">{video.snippet.title}</h2>
@@ -52,7 +58,7 @@ const TrendingVideos = () => {
                   <div className="video-stats">
                     <p>Views: {video.statistics.viewCount}</p>
                     <p>Likes: {video.statistics.likeCount}</p>
-                    <p>Uploaded: {formatDate(video.snippet.publishedAt)}</p>
+                    <p>Uploaded: {new Date(video.snippet.publishedAt).toLocaleDateString()}</p>
                   </div>
                 </div>
               </Link>
@@ -62,7 +68,35 @@ const TrendingVideos = () => {
           <p>Loading...</p>
         )}
       </ul>
+      <Pagination
+        videosPerPage={videosPerPage}
+        totalVideos={videos.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </div>
+  );
+};
+
+const Pagination = ({ videosPerPage, totalVideos, paginate, currentPage }) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalVideos / videosPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav>
+      <ul className="pagination">
+        {pageNumbers.map(number => (
+          <li key={number} className={`page-item ${number === currentPage ? 'active' : ''}`}>
+            <a onClick={() => paginate(number)} href="#!" className="page-link">
+              {number}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
