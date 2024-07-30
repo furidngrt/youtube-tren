@@ -10,15 +10,7 @@ const Navbar = () => {
           YouTube Trending
         </Link>
         <div className="navbar-menu">
-          <Link to="/about" className="navbar-item">
-            About
-          </Link>
-          <Link to="/contact" className="navbar-item">
-            Contact
-          </Link>
-          <Link to="/privacy" className="navbar-item">
-            Privacy
-          </Link>
+          {/* Hapus tautan About, Contact, dan Privacy */}
         </div>
       </div>
     </nav>
