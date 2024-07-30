@@ -1,0 +1,27 @@
+/* src/App.css */
+
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-bottom: 100px; /* Memberi ruang untuk footer */
+  box-sizing: border-box;
+}
+
+main {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
