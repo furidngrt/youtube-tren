@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const VideoDetail = () => {
   const { id } = useParams();
@@ -30,6 +31,11 @@ const VideoDetail = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
+      <Helmet>
+        <title>{video.snippet.title} - YouTube Trending Videos</title>
+        <meta name="description" content={video.snippet.description} />
+        <meta name="keywords" content={video.snippet.tags ? video.snippet.tags.join(', ') : video.snippet.title} />
+      </Helmet>
       <h1 className="text-2xl font-bold mb-4">{video.snippet.title}</h1>
       <div className="video-player mb-4">
         <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-md">
