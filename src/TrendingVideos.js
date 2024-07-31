@@ -50,13 +50,13 @@ const TrendingVideos = () => {
             <li key={video.id} className="video-item mb-4 p-4 bg-white rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
               <Link to={`/video/${video.id}`} className="video-link">
                 <h2 className="text-xl font-bold mb-2 text-gray-800">{video.snippet.title}</h2>
-                <div className="video-content flex items-center">
+                <div className="video-content flex flex-col sm:flex-row items-center">
                   <img
                     src={video.snippet.thumbnails.medium.url}
                     alt={video.snippet.title}
-                    className="video-thumbnail w-32 h-24 object-cover rounded-lg mr-4"
+                    className="video-thumbnail w-full sm:w-32 h-24 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4"
                   />
-                  <div className="video-stats text-gray-700">
+                  <div className="video-stats text-gray-700 text-center sm:text-left">
                     <p className="mb-1"><strong>Views:</strong> {video.statistics.viewCount}</p>
                     <p className="mb-1"><strong>Likes:</strong> {video.statistics.likeCount}</p>
                     <p><strong>Uploaded:</strong> {new Date(video.snippet.publishedAt).toLocaleDateString()}</p>
