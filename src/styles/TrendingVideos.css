@@ -37,15 +37,15 @@
 }
 
 .pagination {
-  @apply flex justify-center py-6 flex-wrap;
+  @apply flex justify-center py-4 flex-wrap;
 }
 
 .page-item {
-  @apply mx-2 my-1;
+  @apply mx-1 my-1;
 }
 
 .page-link {
-  @apply px-4 py-2 border border-gray-300 rounded-lg text-gray-700 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  @apply px-3 py-1 border border-gray-300 rounded-lg text-gray-700 transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500;
 }
 
 .page-item.active .page-link {
