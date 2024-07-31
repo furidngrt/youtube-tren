@@ -7,7 +7,7 @@ const VideoDetail = () => {
   const { id } = useParams();
   const [video, setVideo] = useState(null);
   const [relatedVideos, setRelatedVideos] = useState([]);
-  const API_KEY = 'AIzaSyCSLtSfo8dh4SU2WrlfLT0jiVQp8wkuB7s';
+  const API_KEY = 'AIzaSyCSLtSfo8dh4SU2WrlfLT0jiVQp8wkuB7s'; // Gantilah dengan API key Anda yang benar
 
   useEffect(() => {
     const fetchVideoDetails = async () => {
@@ -20,6 +20,7 @@ const VideoDetail = () => {
           },
         });
         setVideo(response.data.items[0]);
+        console.log('Video Details:', response.data.items[0]);
       } catch (error) {
         console.error('Error fetching video details', error);
       }
@@ -37,6 +38,7 @@ const VideoDetail = () => {
           },
         });
         setRelatedVideos(response.data.items);
+        console.log('Related Videos:', response.data.items);
       } catch (error) {
         console.error('Error fetching related videos', error);
       }
