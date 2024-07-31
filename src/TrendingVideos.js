@@ -54,7 +54,7 @@ const TrendingVideos = () => {
                   <img
                     src={video.snippet.thumbnails.medium.url}
                     alt={video.snippet.title}
-                    className="video-thumbnail w-full sm:w-32 h-24 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4"
+                    className="video-thumbnail w-full sm:w-48 h-28 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4"
                   />
                   <div className="video-stats text-gray-700 text-center sm:text-left">
                     <p className="mb-1"><strong>Views:</strong> {video.statistics.viewCount}</p>
@@ -88,9 +88,9 @@ const Pagination = ({ videosPerPage, totalVideos, paginate, currentPage }) => {
 
   return (
     <nav>
-      <ul className="pagination flex justify-center mt-8">
+      <ul className="pagination flex justify-center mt-8 flex-wrap">
         {pageNumbers.map(number => (
-          <li key={number} className={`page-item ${number === currentPage ? 'active' : ''} mx-1`}>
+          <li key={number} className={`page-item ${number === currentPage ? 'active' : ''} mx-1 my-1`}>
             <button onClick={() => paginate(number)} className="page-link px-4 py-2 border border-gray-300 rounded-lg text-gray-800 transition-transform transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500">
               {number}
             </button>
