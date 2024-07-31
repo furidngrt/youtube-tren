@@ -40,25 +40,26 @@ const TrendingVideos = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
-      <SearchBar /> {/* Pindahkan SearchBar ke sini */}
-
+    <div className="container mx-auto p-4">
+      <div className="mb-8">
+        <SearchBar /> {/* Pindahkan SearchBar ke sini */}
+      </div>
       <ul className="video-list">
         {currentVideos.length > 0 ? (
           currentVideos.map((video) => (
-            <li key={video.id} className="video-item">
+            <li key={video.id} className="video-item mb-4 p-4 bg-white rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105">
               <Link to={`/video/${video.id}`} className="video-link">
-                <h2 className="video-title">{video.snippet.title}</h2>
-                <div className="video-content">
+                <h2 className="text-xl font-bold mb-2 text-gray-800">{video.snippet.title}</h2>
+                <div className="video-content flex items-center">
                   <img
                     src={video.snippet.thumbnails.medium.url}
                     alt={video.snippet.title}
-                    className="video-thumbnail"
+                    className="video-thumbnail w-32 h-24 object-cover rounded-lg mr-4"
                   />
-                  <div className="video-stats">
-                    <p>Views: {video.statistics.viewCount}</p>
-                    <p>Likes: {video.statistics.likeCount}</p>
-                    <p>Uploaded: {new Date(video.snippet.publishedAt).toLocaleDateString()}</p>
+                  <div className="video-stats text-gray-700">
+                    <p className="mb-1"><strong>Views:</strong> {video.statistics.viewCount}</p>
+                    <p className="mb-1"><strong>Likes:</strong> {video.statistics.likeCount}</p>
+                    <p><strong>Uploaded:</strong> {new Date(video.snippet.publishedAt).toLocaleDateString()}</p>
                   </div>
                 </div>
               </Link>
@@ -87,12 +88,12 @@ const Pagination = ({ videosPerPage, totalVideos, paginate, currentPage }) => {
 
   return (
     <nav>
-      <ul className="pagination">
+      <ul className="pagination flex justify-center mt-8">
         {pageNumbers.map(number => (
-          <li key={number} className={`page-item ${number === currentPage ? 'active' : ''}`}>
-            <a onClick={() => paginate(number)} href="#!" className="page-link">
+          <li key={number} className={`page-item ${number === currentPage ? 'active' : ''} mx-1`}>
+            <button onClick={() => paginate(number)} className="page-link px-4 py-2 border border-gray-300 rounded-lg text-gray-800 transition-transform transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500">
               {number}
-            </a>
+            </button>
           </li>
         ))}
       </ul>
