@@ -1,11 +1,10 @@
 import React from 'react';
-import '../../styles/Privacy.css';
 
 const Privacy = () => {
   return (
-    <div>
-      <h1>Privacy</h1>
-      <p>This is the Privacy page.</p>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
+      <p>Your privacy is important to us. We are committed to protecting your personal information and ensuring your experience on our website is safe and secure.</p>
     </div>
   );
 };
