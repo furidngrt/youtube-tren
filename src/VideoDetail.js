@@ -36,7 +36,7 @@ const VideoDetail = () => {
         <meta name="description" content={video.snippet.description} />
         <meta name="keywords" content={video.snippet.tags ? video.snippet.tags.join(', ') : video.snippet.title} />
       </Helmet>
-      <h1 className="text-2xl font-bold mb-4">{video.snippet.title}</h1>
+      <h1 className="text-2xl font-bold mb-4 text-gray-800">{video.snippet.title}</h1>
       <div className="video-player mb-4">
         <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-md">
           <iframe
@@ -48,13 +48,13 @@ const VideoDetail = () => {
           ></iframe>
         </div>
       </div>
-      <div className="bg-white p-4 rounded shadow-md">
+      <div className="bg-white p-6 rounded-lg shadow-md">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
-          <div className="text-left">
-            <p className="text-gray-700 mb-2"><strong>Views:</strong> {video.statistics.viewCount}</p>
-            <p className="text-gray-700 mb-2"><strong>Likes:</strong> {video.statistics.likeCount}</p>
+          <div className="text-left mb-4 sm:mb-0">
+            <p className="text-gray-700 mb-2"><strong>Views:</strong> {parseInt(video.statistics.viewCount).toLocaleString()}</p>
+            <p className="text-gray-700 mb-2"><strong>Likes:</strong> {parseInt(video.statistics.likeCount).toLocaleString()}</p>
           </div>
-          <div className="text-gray-500">
+          <div className="text-gray-500 text-left sm:text-right">
             <p>{parseInt(video.statistics.viewCount).toLocaleString()} people have watched this video.</p>
           </div>
         </div>
