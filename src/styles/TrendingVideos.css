@@ -21,7 +21,7 @@
 }
 
 .video-thumbnail {
-  @apply w-full sm:w-32 h-24 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4;
+  @apply w-full sm:w-48 h-28 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4;
 }
 
 .video-stats {
@@ -33,11 +33,11 @@
 }
 
 .pagination {
-  @apply flex justify-center py-6;
+  @apply flex justify-center py-6 flex-wrap;
 }
 
 .page-item {
-  @apply mx-2;
+  @apply mx-2 my-1;
 }
 
 .page-link {
