@@ -51,11 +51,13 @@ const TrendingVideos = () => {
               <Link to={`/video/${video.id}`} className="video-link">
                 <h2 className="text-xl font-bold mb-2 text-gray-800">{video.snippet.title}</h2>
                 <div className="video-content flex flex-col sm:flex-row items-center">
-                  <img
-                    src={video.snippet.thumbnails.medium.url}
-                    alt={video.snippet.title}
-                    className="video-thumbnail w-full sm:w-48 h-28 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4"
-                  />
+                  <div className="thumbnail-wrapper w-full sm:w-48 h-28 mb-4 sm:mb-0 sm:mr-4">
+                    <img
+                      src={video.snippet.thumbnails.medium.url}
+                      alt={video.snippet.title}
+                      className="video-thumbnail w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
                   <div className="video-stats text-gray-700 text-center sm:text-left">
                     <p className="mb-1"><strong>Views:</strong> {video.statistics.viewCount}</p>
                     <p className="mb-1"><strong>Likes:</strong> {video.statistics.likeCount}</p>
