@@ -54,6 +54,10 @@
 
 /* Media query for mobile devices */
 @media (max-width: 600px) {
+  .thumbnail-wrapper {
+    @apply w-full h-36;
+  }
+  
   .page-link {
     @apply px-2 py-1 text-sm;
   }
