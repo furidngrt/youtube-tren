@@ -7,6 +7,9 @@ import VideoDetail from './VideoDetail';
 import SearchResults from './components/SearchResults';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/navbar/Footer';
+import About from './components/navbar/About'; // Import About
+import Contact from './components/navbar/Contact'; // Import Contact
+import Privacy from './components/navbar/Privacy'; // Import Privacy
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
             <Route path="/" element={<TrendingVideos />} />
             <Route path="/video/:id" element={<VideoDetail />} />
             <Route path="/search/:query" element={<SearchResults />} />
+            <Route path="/about" element={<About />} /> {/* Add About route */}
+            <Route path="/contact" element={<Contact />} /> {/* Add Contact route */}
+            <Route path="/privacy" element={<Privacy />} /> {/* Add Privacy route */}
           </Routes>
         </main>
         <Footer />
