@@ -17,15 +17,15 @@
 }
 
 .video-content {
-  @apply flex items-center;
+  @apply flex flex-col sm:flex-row items-center;
 }
 
 .video-thumbnail {
-  @apply w-32 h-24 object-cover rounded-lg mr-4;
+  @apply w-full sm:w-32 h-24 object-cover rounded-lg mb-4 sm:mb-0 sm:mr-4;
 }
 
 .video-stats {
-  @apply flex flex-col text-gray-700;
+  @apply flex flex-col text-gray-700 text-center sm:text-left;
 }
 
 .video-stats p {
@@ -56,17 +56,5 @@
 
   .pagination {
     @apply py-4;
-  }
-}
-
-/* Media query untuk perangkat mobile */
-@media (max-width: 600px) {
-  .page-link {
-    padding: 5px 10px;
-    font-size: 0.8rem;
-  }
-
-  .pagination {
-    padding: 10px 0;
   }
 }
