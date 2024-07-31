@@ -1,11 +1,10 @@
 import React from 'react';
-import '../../styles/Contact.css';
 
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact</h1>
-      <p>This is the Contact page.</p>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
+      <p>If you have any questions or feedback, feel free to reach out to us at contact@youtube-trending.com.</p>
     </div>
   );
 };
