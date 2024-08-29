@@ -7,7 +7,7 @@ const VideoDetail = () => {
   const { id } = useParams();
   const [video, setVideo] = useState(null);
   const [relatedVideos, setRelatedVideos] = useState([]);
-  const API_KEY = 'AIzaSyCSLtSfo8dh4SU2WrlfLT0jiVQp8wkuB7s'; // Gantilah dengan API key Anda yang benar
+  const API_KEY = 'AIzaSyCm14LTEiN1ruwGGCkPkLCxluG9KNF6zHI'; // Gantilah dengan API key Anda yang benar
 
   useEffect(() => {
     const fetchVideoDetails = async () => {
