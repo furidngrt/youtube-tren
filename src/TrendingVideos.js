@@ -8,7 +8,7 @@ const TrendingVideos = () => {
   const [videos, setVideos] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [videosPerPage] = useState(5); // Number of videos per page
-  const API_KEY = 'AIzaSyCSLtSfo8dh4SU2WrlfLT0jiVQp8wkuB7s';
+  const API_KEY = 'AIzaSyCm14LTEiN1ruwGGCkPkLCxluG9KNF6zHI';
 
   useEffect(() => {
     const fetchTrendingVideos = async () => {
